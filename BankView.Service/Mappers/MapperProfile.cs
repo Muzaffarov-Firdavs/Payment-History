@@ -2,6 +2,7 @@
 using BankView.Domain.Entities;
 using BankView.Service.DTOs;
 using BankView.Service.DTOs.DailyCosts;
+using BankView.Service.DTOs.MonthlyCosts;
 
 namespace BankView.Service.Mappers
 {
@@ -16,6 +17,10 @@ namespace BankView.Service.Mappers
             CreateMap<DailyCost, DailyCostForResultDto>().ReverseMap();
             CreateMap<DailyCost, DailyCostForCreationDto>().ReverseMap();
             CreateMap<DailyCost, DailyCostForUpdateDto>().ReverseMap();
+
+            CreateMap<MonthlyCost, MonthlyCostForResultDto>().ReverseMap();
+            CreateMap<MonthlyCost, MonthlyCostForCreationDto>().ReverseMap();
+            CreateMap<MonthlyCost, MonthlyCostForUpdateDto>().ReverseMap();
         }
     }
 }

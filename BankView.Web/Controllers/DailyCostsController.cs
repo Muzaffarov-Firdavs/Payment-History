@@ -16,15 +16,15 @@ namespace BankView.Web.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> PostUserAsync(DailyCostForCreationDto dto)
+        public async Task<IActionResult> PostCostAsync(DailyCostForCreationDto dto)
             => Ok(await this.dailyService.AddAsync(dto));
 
         [HttpPut("update")]
-        public async Task<IActionResult> PutUserAsync(DailyCostForUpdateDto dto)
+        public async Task<IActionResult> PutCostAsync(DailyCostForUpdateDto dto)
             => Ok(await this.dailyService.ModifyAsync(dto));
 
         [HttpGet("get-list")]
-        public async Task<IActionResult> GetAllUsersAsync()
+        public async Task<IActionResult> GetAllCostsAsync()
             => Ok(await this.dailyService.RetriewAllAsync());
     }
 }

@@ -24,6 +24,8 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IDailyService, DailyService>();
+builder.Services.AddScoped<IMonthlyService, MonthlyService>();
+
 
 
 
