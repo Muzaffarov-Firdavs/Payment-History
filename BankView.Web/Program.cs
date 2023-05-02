@@ -23,6 +23,8 @@ builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IDailyService, DailyService>();
+
 
 
 
