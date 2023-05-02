@@ -11,5 +11,8 @@ namespace BankView.Data.Contexts
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<DailyCost> DailyCosts { get; set; }
+        public DbSet<MonthlyCost> MonthlyCosts { get; set; }
+        public DbSet<YearlyCost> YearlyCost { get; set; }
     }
 }
