@@ -5,6 +5,7 @@ using BankView.Service.Interfaces;
 using BankView.Service.Mappers;
 using BankView.Service.Services;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,15 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IDailyService, DailyService>();
 builder.Services.AddScoped<IMonthlyService, MonthlyService>();
+
+
+// logger configuration
+var logger = new LoggerConfiguration()
+  .ReadFrom.Configuration(builder.Configuration)
+  .Enrich.FromLogContext()
+  .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 
 
